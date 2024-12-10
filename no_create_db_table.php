@@ -7,19 +7,7 @@ $dbname = "INC";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 if (!$conn) { 
-    die("Connection failed: " . mysqli_connect_error()); 
-}
-
-$sql = "CREATE TABLE IF NOT EXISTS myTable (
-    ID VARCHAR(20) PRIMARY KEY, 
-    Name VARCHAR(100), 
-    Email VARCHAR(100), 
-    Telephone VARCHAR(20)
-)";
-if (mysqli_query($conn, $sql)) {
-    echo "Table created or already exists.<br>";
-} else {
-    echo "Error creating table: " . mysqli_error($conn) . "<br>";
+    echo "Connection failed"; 
 }
 
 $sql = "INSERT INTO myTable (ID, Name, Email, Telephone) VALUES 
